@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css'
+import Navbar from './components/layout/Navbar/Navbar';
+import Container from './components/layout/Container/Container';
+import Home from './components/page/Home/Home';
+import About from './components/page/About/About';
+import Cart from './components/page/Cart/Cart';
+import Menu from './components/page/Menu/Menu';
+import Footer from './components/layout/Footer/Footer';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Router>
+      
+      <Navbar />
+       <Container customClass="min-height">
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route path='/projects' element={<Menu />} />
+        <Route path='/company' element={<Cart/>} />
+        <Route path='/contact' element={<About />} />
+        </Routes>
+      </Container>
+    <Footer /> 
+    </Router>
+  );
 }
 
 export default App
