@@ -1,0 +1,36 @@
+@import "../../../App.css";
+
+.home {
+    display: flex;
+    min-height: calc(100vh - 91px);
+    position: relative;
+    margin-top: 20px;
+
+}
+
+#cta {
+    width: 35%;
+    
+    gap: 28px;
+    margin-top: 5%;
+}
+
+.title {
+    font-size: 4rem;
+    color: var(--color-primary-6);
+}
+
+.title span {
+    color: var(--color-primary-6);
+}
+
+.description {
+    font-size: 1.2rem;
+    color: var(--color-primary-6);
+}
+.description span{
+    color: var(--color-primary-5);
+}
+
+
+
