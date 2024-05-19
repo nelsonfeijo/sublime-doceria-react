@@ -1,6 +1,13 @@
+import styles from './ButtonMenu.module.css'
+
+
 function ButtonMenu() {
     return ( 
-        <div>Button</div>
+        <div>
+            <button className={styles.btn_default}>
+                Peça aqui
+            </button>
+        </div>
      );
 }
 

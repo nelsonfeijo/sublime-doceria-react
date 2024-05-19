@@ -11,7 +11,7 @@ function Home() {
             <h1 className={styles.title}>
                 O sabor que vai até <span>você</span>!
             </h1>
-            <p className={styles.description}>Doce como a vida deve ser! Cada pedaço traz a <span>felicidade em forma de sabor</span> , fazendo seus momentos ainda mais especiais.</p>
+            <p className={styles.description}>Doce como a vida deve ser! Cada pedaço traz a <span>felicidade em forma de sabor</span>, fazendo seus momentos ainda mais especiais.</p>
             <ButtonMenu />
 
 
