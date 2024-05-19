@@ -2,34 +2,42 @@
 
 .home {
     display: flex;
-    min-height: calc(100vh - 91px);
-    position: relative;
-    margin-top: 20px;
-
+    
+    padding: 20px 20px; /* Adicionado espaçamento nas laterais */
 }
 
 #cta {
-    width: 35%;
-    
-    gap: 28px;
-    margin-top: 5%;
+    flex: 1; /* Ocupa o espaço restante */
+    margin-top: 20px;
+    padding-right: 20px; /* Espaçamento à direita */
 }
 
 .title {
-    font-size: 4rem;
+    font-size: 3.5rem; /* Reduzido o tamanho da fonte */
     color: var(--color-primary-6);
+    margin-bottom: 50px; /* Adicionado espaçamento inferior */
+    text-align: center;
 }
 
 .title span {
-    color: var(--color-primary-6);
+    color: var(--color-primary-3);
 }
 
 .description {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: var(--color-primary-6);
+    line-height: 1.5; /* Espaçamento entre linhas aumentado */
+    
 }
-.description span{
-    color: var(--color-primary-5);
+
+.description span {
+    color: var(--color-primary-3);
+}
+
+@media screen and (max-width: 1200px) {
+    .carrosel {
+        display: none;
+    }
 }
 
 

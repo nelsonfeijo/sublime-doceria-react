@@ -1,3 +1,4 @@
+import ButtonMenu from '../../Buttons/ButtonMenu/ButtonMenu';
 import Carrosel from '../../layout/Carrosel/Carrosel';
 import styles from './Home.module.css';
 
@@ -8,11 +9,14 @@ function Home() {
             
         <div id={styles.cta}>
             <h1 className={styles.title}>
-                O sabor que vai até <span>você</span>
+                O sabor que vai até <span>você</span>!
             </h1>
             <p className={styles.description}>Doce como a vida deve ser! Cada pedaço traz a <span>felicidade em forma de sabor</span> , fazendo seus momentos ainda mais especiais.</p>
+            <ButtonMenu />
+
+
         </div>
-        <Carrosel />
+        <Carrosel className={styles.carrosel}/>
        
         
     </section>

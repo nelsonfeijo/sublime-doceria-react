@@ -1,0 +1,27 @@
+@import "../../../App.css";
+
+.footer{
+    padding: 5px;
+    background-color: rgb(250, 221, 221);
+}
+.img {
+ width: 50px;
+ height: 50px;
+}
+.footer_items {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 8% 0px 8%;
+    align-items: center;
+}
+.copyright {
+    color: var(--color-neutral-6);
+    font-weight: 500;
+    margin-left: 50px;
+}
+.social_media_buttons{
+    font-size: 25px;
+    margin-top: 6px;
+    color: var(--color-neutral-1);
+    margin-right: 20px;
+}
