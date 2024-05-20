@@ -17,6 +17,9 @@
 .btn_default:hover {
     background-color: var(--color-primary-3);
 }
+.btn_txt:hover{
+    color: white;
+}
 .btn_txt{
     color: var(--color-primary-1);
 }

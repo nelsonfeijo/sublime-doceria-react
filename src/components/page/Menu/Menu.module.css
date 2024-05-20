@@ -3,5 +3,23 @@
 
 .menu_container{
     color: var(--color-primary-6);
-    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
+    
+}
+.menu_container h1, h2{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.menu_container img{
+    
+    width: 80px;
+    margin-right: 20px;
+}
+.menu_item{
+    display: flex;
+    margin: 10px;
 }
