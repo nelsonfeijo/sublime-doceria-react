@@ -1,3 +1,5 @@
+@import "../../../App.css";
+
 .btn_default {
     border: none;
     display: flex;
@@ -14,4 +16,7 @@
 
 .btn_default:hover {
     background-color: var(--color-primary-3);
+}
+.btn_txt{
+    color: var(--color-primary-1);
 }

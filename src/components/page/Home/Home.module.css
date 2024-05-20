@@ -2,14 +2,17 @@
 
 .home {
     display: flex;
-    
-    padding: 20px 20px;
+    position: relative;
+    margin-top: 20px;
 }
 
+
 #cta {
+    
     flex: 1; 
     margin-top: 20px;
-    padding-right: 20px; 
+    padding-right: 20px;
+    text-align: center;
 }
 
 .title {
@@ -27,17 +30,26 @@
     font-size: 1.5rem;
     color: var(--color-primary-6);
     line-height: 1.5; 
+    margin-bottom: 40px;
 }
+
 
 .description span {
+    
     color: var(--color-primary-3);
 }
-
-@media screen and (max-width: 1200px) {
-    .carrosel {
-        display: none;
-    }
+.btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
 }
+
+.btn_menu {
+    display: inline-block; 
+}
+
+
 
 
 

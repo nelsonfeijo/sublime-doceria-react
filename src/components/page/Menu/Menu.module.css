@@ -1,0 +1,7 @@
+@import "../../../App.css";
+
+
+.menu_container{
+    color: var(--color-primary-6);
+    margin-top: 30px;
+}
