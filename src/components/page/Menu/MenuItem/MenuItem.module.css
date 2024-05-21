@@ -1,0 +1,73 @@
+/* Estilos para MenuItem */
+.menu_item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    max-width: 100%;
+}
+
+.menu_item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu_item img {
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.menu_item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #333;
+    text-align: center;
+}
+
+.menu_item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    
+}
+
+.price p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    align-self: flex-start; /* Ensures the price aligns to the start of the container */
+}
+
+
+.order_button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-left: auto;
+    margin-bottom: 22px;
+}
+
+
+.order_button:hover {
+    background-color: #e55337;
+}
+
