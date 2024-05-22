@@ -1,25 +1,40 @@
 @import "../../../../App.css";
 
 .cart {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px); /* Ajusta a largura mínima e máxima das colunas conforme necessário */
+    grid-auto-rows: max-content;
     margin-top: 20px;
     padding: 20px;
-    max-height: 500px;
+    max-height: 650px;
     border-radius: 8px;
     color: var(--color-primary-6);
+    overflow-y: auto; /* Permite rolagem vertical se necessário */
 }
 
 .cart h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    grid-column: span 3; /* Faz o título ocupar duas colunas */
 }
 
 .cart_item {
-    max-width: 500px;
+    width: 300px;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid var(--color-primary-2);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    max-width: 100%;
+    
 }
-
+.cart_item:hover{
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 .cart_item img {
     width: 80px;
@@ -42,8 +57,8 @@
 }
 
 .cart_item button {
-    background-color: #ff6347;
-    color: #fff;
+    background-color: var(--color-primary-6);
+    color: var(--color-primary-1);
     border: none;
     padding: 8px 16px;
     border-radius: 4px;
@@ -52,5 +67,11 @@
 }
 
 .cart_item button:hover {
-    background-color: #e55337;
+    background-color: var(--color-primary-5);
+}
+
+@media (max-width: 767px) {
+    .cart {
+        grid-template-columns: 1fr; /* Para telas menores, faça o carrinho usar uma única coluna */
+    }
 }
