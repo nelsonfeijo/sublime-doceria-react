@@ -4,13 +4,15 @@ import Navbar from './components/layout/Navbar/Navbar';
 import Container from './components/layout/Container/Container';
 import Home from './components/page/Home/Home';
 import About from './components/page/About/About';
-import Cart from './components/page/Cart/Cart';
+import Cart from './components/page/Cart/Cart/Cart';
 import Menu from './components/page/Menu/Menu';
 import Footer from './components/layout/Footer/Footer';
+import { CartProvider } from './components/page/Cart/CartContext/CartContext';
 
 function App() {
 
   return (
+    <CartProvider>
     <Router>
       
       <Navbar />
@@ -24,6 +26,7 @@ function App() {
       </Container>
     <Footer /> 
     </Router>
+    </CartProvider>
   );
 }
 

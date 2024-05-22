@@ -1,6 +1,14 @@
 import styles from './MenuItem.module.css';
+import { useCart } from '../../Cart/CartContext/CartContext';
 
-const MenuItem = ({ title, description, price, image }) => {
+const MenuItem = ({ id, title, description, price, image }) => {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        const item = { id, title, description, price, image };
+        addToCart(item);
+    };
+
     return (
         <div className={styles.menu_item}>
             <div className={styles.image_wrapper}>
@@ -9,10 +17,10 @@ const MenuItem = ({ title, description, price, image }) => {
             <div className={styles.menu_content}>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <div className={`${styles.price} ${styles.price_container}`}>
+                <div className={styles.price}>
                     <p>{price}</p>
-                    <button className={styles.order_button}>
-                        <i className="fas fa-shopping-cart"></i> Comprar
+                    <button className={styles.order_button} onClick={handleAddToCart}>
+                        Comprar
                     </button>
                 </div>
             </div>

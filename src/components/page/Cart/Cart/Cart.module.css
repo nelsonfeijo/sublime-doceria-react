@@ -1,0 +1,56 @@
+@import "../../../../App.css";
+
+.cart {
+    margin-top: 20px;
+    padding: 20px;
+    max-height: 500px;
+    border-radius: 8px;
+    color: var(--color-primary-6);
+}
+
+.cart h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.cart_item {
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.cart_item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.cart_item_details {
+    flex: 1;
+}
+
+.cart_item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.cart_item p {
+    margin-bottom: 8px;
+}
+
+.cart_item button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart_item button:hover {
+    background-color: #e55337;
+}
