@@ -56,18 +56,24 @@
 
 
 .order_button {
-    background-color: #ff6347;
-    color: #fff;
+    background-color: var(--color-primary-6);
+    color: var(--color-primary-1);
     border: none;
+    padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    margin-left: auto;
-    margin-bottom: 22px;
+    transition: background-color 0.3s;
 }
 
 
 .order_button:hover {
-    background-color: #e55337;
+    background-color: var(--color-primary-5);
 }
 
+@media (max-width: 767px) {
+    .cart {
+        display: ;
+        margin-left: 100px;
+        columns: 1fr;
+    }
+}

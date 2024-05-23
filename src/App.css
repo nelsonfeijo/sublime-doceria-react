@@ -21,7 +21,7 @@
 }
 
 html, body, #root {
-  background-color: var(--color-primary-1);
+  background-color: var(--color-neutral-0);
   height: 100%;
   width: 100%;
 }

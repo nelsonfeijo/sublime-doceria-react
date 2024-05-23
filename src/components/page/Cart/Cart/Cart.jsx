@@ -1,7 +1,5 @@
-
 import { useCart } from '../CartContext/CartContext';
-import styles from '../Cart/Cart.module.css'
-
+import styles from '../Cart/Cart.module.css';
 
 const Cart = () => {
     const { cart, removeFromCart } = useCart();
