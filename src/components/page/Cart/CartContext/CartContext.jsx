@@ -1,52 +1,51 @@
-import { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
-// Criação do contexto
 const CartContext = createContext();
 
-// Provedor do contexto
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
-    const userId = '123'; // Pode ser o ID do usuário autenticado
+  const [cart, setCart] = useState([]);
 
-    useEffect(() => {
-        const fetchCart = async () => {
-            try {
-                const response = await axios.get(`http://localhost:5000/cart/${userId}`);
-                setCart(response.data.items);
-            } catch (error) {
-                console.error('Erro ao buscar o carrinho:', error);
-            }
-        };
-        fetchCart();
-    }, []);
-
-    const addToCart = async (item) => {
-        try {
-            const response = await axios.post('http://localhost:5000/cart', { userId, item });
-            setCart(response.data.items);
-        } catch (error) {
-            console.error('Erro ao adicionar item ao carrinho:', error);
-        }
+  useEffect(() => {
+    const fetchCart = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/cart/123');
+        setCart(response.data.items);
+      } catch (error) {
+        console.error('Erro ao buscar o carrinho:', error);
+      }
     };
 
-    const removeFromCart = async (itemId) => {
-        try {
-            const response = await axios.delete(`http://localhost:5000/cart/${userId}/${itemId}`);
-            setCart(response.data.items);
-        } catch (error) {
-            console.error('Erro ao remover item do carrinho:', error);
-        }
-    };
+    fetchCart();
+  }, []);
 
-    return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
-            {children}
-        </CartContext.Provider>
-    );
+  const addToCart = async (item) => {
+    const newCart = [...cart, item];
+    setCart(newCart);
+    await saveCart(newCart);
+  };
+
+  const removeFromCart = async (itemId) => {
+    const newCart = cart.filter((item) => item.id !== itemId);
+    setCart(newCart);
+    await saveCart(newCart);
+  };
+
+  const saveCart = async (newCart) => {
+    try {
+      await axios.post('http://localhost:5000/cart/123', { items: newCart });
+    } catch (error) {
+      console.error('Erro ao salvar o carrinho:', error);
+    }
+  };
+
+  return (
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+      {children}
+    </CartContext.Provider>
+  );
 };
 
-// Hook para usar o contexto
 export const useCart = () => {
-    return useContext(CartContext);
+  return useContext(CartContext);
 };
