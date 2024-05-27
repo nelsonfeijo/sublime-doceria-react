@@ -1,5 +1,5 @@
 import styles from './MenuItem.module.css';
-import { useCart } from '../../Cart/CartContext/CartContext';
+import { useCart } from '../../Cart/UseCart/useCart';
 
 const MenuItem = ({ id, title, description, price, image }) => {
     const { addToCart } = useCart();

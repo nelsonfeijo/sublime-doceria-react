@@ -51,3 +51,4 @@ CartProvider.propTypes = {
 };
 
 export default CartContext;
+
