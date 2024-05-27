@@ -25,6 +25,7 @@ export const CartProvider = ({ children }) => {
         try {
             await axios.post('http://localhost:5000/cart', item);
             setCart((prevCart) => [...prevCart, item]);
+            window.location.reload(); // Recarrega a página após adicionar ao carrinho
         } catch (error) {
             console.error('Erro ao adicionar ao carrinho:', error);
         }
@@ -34,6 +35,7 @@ export const CartProvider = ({ children }) => {
         try {
             await axios.delete(`http://localhost:5000/cart/${itemId}`);
             setCart((prevCart) => prevCart.filter(item => item.id !== itemId));
+            window.location.reload(); // Recarrega a página após remover do carrinho
         } catch (error) {
             console.error('Erro ao remover do carrinho:', error);
         }
@@ -51,4 +53,3 @@ CartProvider.propTypes = {
 };
 
 export default CartContext;
-
