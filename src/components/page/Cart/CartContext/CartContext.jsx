@@ -1,51 +1,53 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
+// Criação do contexto
 const CartContext = createContext();
 
+// Provedor do contexto
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState([]);
 
-  useEffect(() => {
-    const fetchCart = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/cart/123');
-        setCart(response.data.items);
-      } catch (error) {
-        console.error('Erro ao buscar o carrinho:', error);
-      }
+    useEffect(() => {
+        const fetchCart = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/cart');
+                setCart(response.data);
+            } catch (error) {
+                console.error('Erro ao buscar o carrinho:', error);
+            }
+        };
+        fetchCart();
+    }, []);
+
+    const addToCart = async (item) => {
+        try {
+            await axios.post('http://localhost:5000/cart', item);
+            setCart((prevCart) => [...prevCart, item]);
+        } catch (error) {
+            console.error('Erro ao adicionar ao carrinho:', error);
+        }
     };
 
-    fetchCart();
-  }, []);
+    const removeFromCart = async (itemId) => {
+        try {
+            await axios.delete(`http://localhost:5000/cart/${itemId}`);
+            setCart((prevCart) => prevCart.filter(item => item.id !== itemId));
+        } catch (error) {
+            console.error('Erro ao remover do carrinho:', error);
+        }
+    };
 
-  const addToCart = async (item) => {
-    const newCart = [...cart, item];
-    setCart(newCart);
-    await saveCart(newCart);
-  };
-
-  const removeFromCart = async (itemId) => {
-    const newCart = cart.filter((item) => item.id !== itemId);
-    setCart(newCart);
-    await saveCart(newCart);
-  };
-
-  const saveCart = async (newCart) => {
-    try {
-      await axios.post('http://localhost:5000/cart/123', { items: newCart });
-    } catch (error) {
-      console.error('Erro ao salvar o carrinho:', error);
-    }
-  };
-
-  return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
-      {children}
-    </CartContext.Provider>
-  );
+    return (
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+            {children}
+        </CartContext.Provider>
+    );
 };
 
-export const useCart = () => {
-  return useContext(CartContext);
+CartProvider.propTypes = {
+    children: PropTypes.node.isRequired,
 };
+
+export default CartContext;

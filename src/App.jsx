@@ -10,24 +10,22 @@ import Footer from './components/layout/Footer/Footer';
 import { CartProvider } from './components/page/Cart/CartContext/CartContext';
 
 function App() {
-
   return (
-    <CartProvider>
-    <Router>
-      
-      <Navbar />
-       <Container customClass="min-height">
-      <Routes>
-        <Route exact path='/' element={<Home />} />
-        <Route path='/menu' element={<Menu />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/cart' element={<Cart/>} />
-        </Routes>
-      </Container>
-    <Footer /> 
-    </Router>
-    </CartProvider>
+      <CartProvider>
+          <Router>
+              <Navbar />
+              <Container customClass="min-height">
+                  <Routes>
+                      <Route exact path="/" element={<Home />} />
+                      <Route path="/menu" element={<Menu />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path="/cart" element={<Cart />} />
+                  </Routes>
+              </Container>
+              <Footer />
+          </Router>
+      </CartProvider>
   );
 }
 
-export default App
+export default App;
