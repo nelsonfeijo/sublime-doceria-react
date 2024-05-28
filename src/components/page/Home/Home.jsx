@@ -17,7 +17,7 @@ function Home() {
             <ButtonMenu className={styles.btn_menu} />
         </div>
     </div>
-    <Carrosel className={styles.carrosel} />
+    <Carrosel className={styles.crs} />
 </section>
 
 

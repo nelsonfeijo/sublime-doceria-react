@@ -67,3 +67,22 @@ input[type="radio"] {
 .radio4:checked ~ .slides {
     margin-left: -300%;
 }
+@media (max-width: 600px) {
+    .slider {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 400px) {
+    .slider {
+        max-width: 80%;
+    }
+}
+    /* Define a altura do carrossel com base na altura da imagem mais alta */
+    .slider {
+        height: auto; /* Define a altura como automática */
+    }
+    
+    .slides {
+        max-height: 100%; /* Garante que o carrossel não ultrapasse a altura do contêiner pai */
+    }
