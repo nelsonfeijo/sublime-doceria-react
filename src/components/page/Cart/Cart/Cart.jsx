@@ -1,14 +1,15 @@
 import { useCart } from '../UseCart/useCart';
 import styles from '../Cart/Cart.module.css';
-import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Cart = () => {
-    const { cart, removeFromCart } = useCart();
-    const [cartItems, setCartItems] = useState(cart);
+    const { cart, removeFromCart, fetchCart } = useCart();
+
+    useEffect(() => {
+        fetchCart();
+    }, [fetchCart]);
 
     const handleRemoveFromCart = (itemId) => {
-        const updatedCart = cartItems.filter(item => item.id !== itemId);
-        setCartItems(updatedCart);
         removeFromCart(itemId);
     };
 

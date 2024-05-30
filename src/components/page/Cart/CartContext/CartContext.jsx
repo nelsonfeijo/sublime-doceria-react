@@ -9,23 +9,23 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
+    const fetchCart = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/cart');
+            setCart(response.data);
+        } catch (error) {
+            console.error('Erro ao buscar o carrinho:', error);
+        }
+    };
+
     useEffect(() => {
-        const fetchCart = async () => {
-            try {
-                const response = await axios.get('http://localhost:5000/cart');
-                setCart(response.data);
-            } catch (error) {
-                console.error('Erro ao buscar o carrinho:', error);
-            }
-        };
         fetchCart();
     }, []);
 
     const addToCart = async (item) => {
         try {
             await axios.post('http://localhost:5000/cart', item);
-            setCart((prevCart) => [...prevCart, item]);
-            window.location.reload(); // Recarrega a página após adicionar ao carrinho
+            fetchCart(); // Atualiza o carrinho após adicionar
         } catch (error) {
             console.error('Erro ao adicionar ao carrinho:', error);
         }
@@ -34,15 +34,14 @@ export const CartProvider = ({ children }) => {
     const removeFromCart = async (itemId) => {
         try {
             await axios.delete(`http://localhost:5000/cart/${itemId}`);
-            setCart((prevCart) => prevCart.filter(item => item.id !== itemId));
-            window.location.reload(); // Recarrega a página após remover do carrinho
+            fetchCart(); // Atualiza o carrinho após remover
         } catch (error) {
             console.error('Erro ao remover do carrinho:', error);
         }
     };
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, fetchCart }}>
             {children}
         </CartContext.Provider>
     );
