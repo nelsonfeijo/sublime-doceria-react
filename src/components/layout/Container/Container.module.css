@@ -4,6 +4,7 @@
     justify-content: space-between;
     margin: 0 auto;
     flex-wrap: wrap;
+    
   }
   
   .start {
@@ -15,6 +16,6 @@
     justify-content: flex-start;
   }
   
-  .min-height {
-    min-height: 75%;
-  }
+.min-height {
+  min-height: calc(100vh - 15vh - 10vh); /* Ajuste 60px e 40px para a altura do Navbar e do Footer */
+}

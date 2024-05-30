@@ -5,8 +5,9 @@
     align-items: center;
     justify-content: space-between;
     background-color: rgb(250, 221, 221);
-    padding: 0px;
     width: 100vw;
+    height: 15%;
+    margin-bottom: 30px;
   }
   .list {
     display: flex;

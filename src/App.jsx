@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css'
 import Navbar from './components/layout/Navbar/Navbar';
-import Container from './components/layout/Container/Container';
+import Container from './components/layout/Container/Container'
 import Home from './components/page/Home/Home';
 import About from './components/page/About/About';
 import Cart from './components/page/Cart/Cart/Cart';
@@ -21,7 +21,7 @@ function App() {
                       <Route path="/about" element={<About />} />
                       <Route path="/cart" element={<Cart />} />
                   </Routes>
-              </Container>
+           </Container>
               <Footer />
           </Router>
       </CartProvider>

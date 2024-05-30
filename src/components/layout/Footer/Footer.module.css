@@ -3,6 +3,8 @@
 .footer{
     padding: 5px;
     background-color: rgb(250, 221, 221);
+    height: 10%;
+    margin-top: 0;
 }
 .img {
  width: 50px;

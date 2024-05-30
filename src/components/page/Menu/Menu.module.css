@@ -23,9 +23,9 @@
     display: flex;
     margin: 10px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1130px) {
     .menu_container {
-        display: block;
+        display: grid;
         margin-left: 80px;
         columns: 1fr;
     }
