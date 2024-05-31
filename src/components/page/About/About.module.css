@@ -1,53 +1,47 @@
-.home {
+.home{
     display: flex;
-    flex-direction: row; /* Elementos dispostos lado a lado inicialmente */
-    position: relative;
-    margin-top: 20px;
-    width: 90vw; /* Largura inicial de 90% da viewport */
-    max-width: 100vw; /* Garante que a largura não ultrapasse a viewport */
+    
 }
-  
-  #cta {
-    flex: 1;
-    margin-top: 20px;
-    padding-right: 20px;
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 3.5rem;
+.cta{
+    margin-right: 20px;
+}
+.cta img{
+    width: 500px;
+    margin-left: 10px;
+    border-radius: 10%;
+}
+.title {
+    font-size: 2.5rem;
     color: var(--color-primary-6);
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
   .title span {
     color: var(--color-primary-3);
   }
-  
   .description {
     font-size: 1.5rem;
     color: var(--color-primary-6);
     line-height: 1.5;
     margin-bottom: 40px;
+    text-align: center;
   }
   
   .description span {
     color: var(--color-primary-3);
   }
-  
   .btn_container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 10px;
   }
   
   .btn_menu {
     display: inline-block;
   }
-  
+
   @media (max-width: 1200px) {
     .home {
       width: 90vw; 

@@ -10,7 +10,6 @@ function Navbar() {
   const [activeItem, setActiveItem] = useState('');
 
   useEffect(() => {
-    // Remove a barra inicial do pathname
     const pathname = location.pathname.slice(1);
     setActiveItem(pathname);
   }, [location]);

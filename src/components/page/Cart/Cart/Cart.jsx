@@ -45,21 +45,21 @@ const Cart = () => {
             setGroupedCartItems(updatedCart);
         }
 
-        // Remove a primeira ocorrência do item com o título específico no array original
+        
         const updatedOriginalCart = [...cart];
         const index = updatedOriginalCart.findIndex(item => item.title === title);
         if (index !== -1) {
             updatedOriginalCart.splice(index, 1);
         }
         setCart(updatedOriginalCart);
-        removeFromCart(title); // Chama a função removeFromCart para atualizar o backend
+        removeFromCart(title); 
     };
 
 
 
     const handleRemoveAllFromCart = async (title) => {
     await removeItemsByTitle(title);
-    // Atualize o estado do grupo de itens após a remoção dos itens
+    
     const updatedGroupedCartItems = groupedCartItems.filter(item => item.title !== title);
     setGroupedCartItems(updatedGroupedCartItems);
 };
@@ -74,11 +74,11 @@ const Cart = () => {
         return result;
     };
     
-    // No seu componente Cart
+    
     const handleAddToCart = (title) => {
         const itemToAdd = cart.find(item => item.title === title);
         if (itemToAdd) {
-            const newItem = { ...itemToAdd, id: generateUniqueId() }; // Usa a função para gerar um ID único
+            const newItem = { ...itemToAdd, id: generateUniqueId() }; 
             addToCart(newItem, setCart);
             const updatedCart = groupedCartItems.map(item =>
                 item.title === title ? { ...item, quantity: item.quantity + 1 } : item
@@ -88,7 +88,7 @@ const Cart = () => {
     };
 
     const handleCheckout = () => {
-        // Lógica para finalizar o pedido e enviar via WhatsApp
+
         const cartItems = groupedCartItems.map((item) => {
             return `(${item.quantity}) => ${item.title}`;
         }).join(" | ");
@@ -99,7 +99,7 @@ const Cart = () => {
         const phone = "48999341918";
         window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 
-        setCart([]); // Limpar o carrinho após finalizar o pedido
+        setCart([]); 
         setGroupedCartItems([]);
         setTotal(0);
 

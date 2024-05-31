@@ -52,7 +52,7 @@
     font-weight: bold;
     color: #000;
     margin: 0;
-    align-self: flex-start; /* Ensures the price aligns to the start of the container */
+    align-self: flex-start; 
 }
 
 

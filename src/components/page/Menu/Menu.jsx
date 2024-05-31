@@ -15,43 +15,43 @@ const Menu = () => {
                 <h1>Bolos</h1>
                 <MenuItem 
                     title="Bolo de pote"
-                    description="Alface romana, croutons e molho Caesar caseiro."
+                    description="Bolo de 4 leites, com chocolate branco realado e muito cremoso"
                     price="R$ 15,00"
                     image={bolo1}
                 />
                 <MenuItem 
                     title="Bolo com cobertura de leite ninho"
-                    description="Alface romana, croutons e molho Caesar caseiro."
-                    price="R$ 15,00"
+                    description="Bolo simples com cobertura de leite ninho"
+                    price="R$ 35,00"
                     image={bolo2}
                 />
                 <MenuItem 
-                    title="Brownie com Kitkat"
-                    description="Alface romana, croutons e molho Caesar caseiro."
-                    price="R$ 15,00"
+                    title="Brownie com KitKat"
+                    description="Brownie com cobertura de brigadeiro e KitKat"
+                    price="R$ 10,00"
                     image={bolo3}
                 />
             </section>
 
             <section className={styles.menu_section} id="main-courses">
-                <h1>Bolos de Pote</h1>
+                <h1>Docinhos</h1>
                 <MenuItem 
                     title="Barca de docinhos"
-                    description="Alface romana, croutons e molho Caesar caseiro."
-                    price="R$ 15,00"
+                    description="Barca com 20 docinhos sortidos."
+                    price="R$ 30,00"
                     image={doc1}
                 />
             
                 <MenuItem 
                     title="Docinho de coco"
-                    description="Alface romana, croutons e molho Caesar caseiro."
-                    price="R$ 15,00"
+                    description="Docinho de coco com leite ninho"
+                    price="R$ 2,00"
                     image={doc3}
                 />
                 <MenuItem 
                     title="Brigadeiro de docinho de morango"
-                    description="Alface romana, croutons e molho Caesar caseiro."
-                    price="R$ 15,00"
+                    description="Caixinha com 2 brigadeiros e 2 brigadeiros de morango"
+                    price="R$ 10,00"
                     image={doc4}
                 />
             </section>

@@ -2,10 +2,10 @@ import { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-// Criação do contexto
+
 const CartContext = createContext();
 
-// Provedor do contexto
+
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
