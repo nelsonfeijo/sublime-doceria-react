@@ -1,3 +1,137 @@
 {
-  "cart": []
+  "cart": [
+    {
+      "id": "6205",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "5a7b",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "66f0",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "74a6",
+      "title": "Barca de docinhos",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/barca_de_docinhos.jpg"
+    },
+    {
+      "id": "f53e",
+      "title": "Barca de docinhos",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/barca_de_docinhos.jpg"
+    },
+    {
+      "id": "ebd6",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "c603",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "a120",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "4429",
+      "title": "Barca de docinhos",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/barca_de_docinhos.jpg"
+    },
+    {
+      "id": "6a5a",
+      "title": "Barca de docinhos",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/barca_de_docinhos.jpg"
+    },
+    {
+      "id": "2ecf",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "5c41",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "2f17",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "e7e0",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "a6ea",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "371f",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "70df",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "d396",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "43a3",
+      "title": "Bolo de pote",
+      "description": "Alface romana, croutons e molho Caesar caseiro.",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    }
+  ]
 }
