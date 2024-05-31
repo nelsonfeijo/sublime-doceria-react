@@ -3,7 +3,7 @@ import styles from '../Cart/Cart.module.css';
 import { useState, useEffect } from 'react';
 
 const Cart = () => {
-    const { cart, setCart, removeFromCart } = useCart(); // Garantir que setCart está disponível
+    const { cart, setCart, addToCart, removeFromCart, removeAllFromCart } = useCart();
     const [groupedCartItems, setGroupedCartItems] = useState([]);
     const [total, setTotal] = useState(0);
 
@@ -32,9 +32,8 @@ const Cart = () => {
         groupItems();
         calculateTotal();
     }, [cart]);
-    
 
-    const handleRemoveFromCart = (title) => {
+    const handleRemoveOneFromCart = (title) => {
         const itemToRemove = groupedCartItems.find(item => item.title === title);
         if (itemToRemove.quantity > 1) {
             const updatedCart = groupedCartItems.map(item =>
@@ -45,36 +44,55 @@ const Cart = () => {
             const updatedCart = groupedCartItems.filter(item => item.title !== title);
             setGroupedCartItems(updatedCart);
         }
-       
+
         // Remove a primeira ocorrência do item com o título específico no array original
-        const updatedOriginalCart = cart.filter((item) => {
-            if (item.title === title && !itemToRemove.removed) {
-                itemToRemove.removed = true; // Marca o item como removido
-                return false;
-            }
-            return true;
-        });
+        const updatedOriginalCart = [...cart];
+        const index = updatedOriginalCart.findIndex(item => item.title === title);
+        if (index !== -1) {
+            updatedOriginalCart.splice(index, 1);
+        }
         setCart(updatedOriginalCart);
         removeFromCart(title); // Chama a função removeFromCart para atualizar o backend
     };
-    const handleAddToCart = (title) => {
-        const updatedCart = [...cart];
-        const itemToAdd = updatedCart.find(item => item.title === title);
-        updatedCart.push(itemToAdd);
-        setCart(updatedCart);
-    };
-    const handleCheckout = () => {
-        // Lógica para finalizar o pedido
-        console.log('Pedido finalizado');
-    };
+
     const handleRemoveAllFromCart = (title) => {
         const updatedCart = groupedCartItems.filter(item => item.title !== title);
         setGroupedCartItems(updatedCart);
 
         const updatedOriginalCart = cart.filter(item => item.title !== title);
         setCart(updatedOriginalCart);
-        removeFromCart(title); // Chama a função removeFromCart para atualizar o backend
+
+        // Remove todos os itens com o título fornecido do backend
+        removeAllFromCart(title);
     };
+
+    const handleAddToCart = (title) => {
+        const itemToAdd = cart.find(item => item.title === title);
+        if (itemToAdd) {
+            const newItem = { ...itemToAdd, id: Date.now() }; // Cria um novo item com um ID único
+            addToCart(newItem);
+        }
+    };
+
+    const handleCheckout = () => {
+        // Lógica para finalizar o pedido e enviar via WhatsApp
+        const cartItems = groupedCartItems.map((item) => {
+            return `(${item.quantity}) => ${item.title}`;
+        }).join(" | ");
+
+        const addressInput = "O meu endereço é: "; 
+        
+        const message = encodeURIComponent(`${cartItems} || Valor total: ${total.toFixed(2)} || ${addressInput}`);
+        const phone = "48999341918";
+        window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+
+        setCart([]); // Limpar o carrinho após finalizar o pedido
+        setGroupedCartItems([]);
+        setTotal(0);
+
+        console.log('Pedido finalizado');
+    };
+
     return (
         <div className={styles.cart}>
             <h2>Seu Carrinho</h2>
@@ -88,13 +106,19 @@ const Cart = () => {
                                 <img src={item.image} alt={item.title} />
                                 <div className={styles.cart_item_details}>
                                     <div>
-                                    <h3>{item.title}</h3>
-                                    <p>{item.description}</p>
-                                    <p>{item.price}</p>
-                                    <p>Quantidade: <button className={styles.btn_quantity} onClick={() => handleRemoveFromCart(item.title)}>-</button>{item.quantity}<button className={styles.btn_quantity} onClick={() => handleAddToCart(item.title)}>+</button></p>
+                                        <h3>{item.title}</h3>
+                                        <p>{item.description}</p>
+                                        <p>{item.price}</p>
+                                        <p>
+                                            Quantidade: 
+                                            <button className={styles.btn_quantity} onClick={() => handleRemoveOneFromCart(item.title)}>-</button>
+                                            {item.quantity}
+                                            <button className={styles.btn_quantity} onClick={() => handleAddToCart(item.title)}>+</button>
+                                        </p>
                                     </div>
-                                    <div className={styles.cart_item_details_buttons}> <button className={styles.order_button} onClick={() => handleRemoveAllFromCart(item.title)}>Remover</button></div>
-                                   
+                                    <div className={styles.cart_item_details_buttons}>
+                                        <button className={styles.order_button} onClick={() => handleRemoveAllFromCart(item.title)}>Remover</button>
+                                    </div>
                                 </div>
                             </div>
                         ))}

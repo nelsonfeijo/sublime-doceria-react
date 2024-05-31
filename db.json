@@ -1,133 +1,49 @@
 {
   "cart": [
     {
-      "id": "6205",
+      "id": "c157",
       "title": "Bolo de pote",
       "description": "Alface romana, croutons e molho Caesar caseiro.",
       "price": "R$ 15,00",
       "image": "/src/assets/bolo_de_pote.jpg"
     },
     {
-      "id": "5a7b",
-      "title": "Bolo de pote",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/bolo_de_pote.jpg"
-    },
-    {
-      "id": "66f0",
-      "title": "Bolo de pote",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/bolo_de_pote.jpg"
-    },
-    {
-      "id": "74a6",
+      "id": 1717166042590,
       "title": "Barca de docinhos",
       "description": "Alface romana, croutons e molho Caesar caseiro.",
       "price": "R$ 15,00",
       "image": "/src/assets/barca_de_docinhos.jpg"
     },
     {
-      "id": "f53e",
+      "id": 1717166047486,
       "title": "Barca de docinhos",
       "description": "Alface romana, croutons e molho Caesar caseiro.",
       "price": "R$ 15,00",
       "image": "/src/assets/barca_de_docinhos.jpg"
     },
     {
-      "id": "ebd6",
+      "id": "9d15",
       "title": "Bolo de pote",
       "description": "Alface romana, croutons e molho Caesar caseiro.",
       "price": "R$ 15,00",
       "image": "/src/assets/bolo_de_pote.jpg"
     },
     {
-      "id": "c603",
+      "id": "9d48",
       "title": "Bolo de pote",
       "description": "Alface romana, croutons e molho Caesar caseiro.",
       "price": "R$ 15,00",
       "image": "/src/assets/bolo_de_pote.jpg"
     },
     {
-      "id": "a120",
+      "id": "013b",
       "title": "Bolo de pote",
       "description": "Alface romana, croutons e molho Caesar caseiro.",
       "price": "R$ 15,00",
       "image": "/src/assets/bolo_de_pote.jpg"
     },
     {
-      "id": "4429",
-      "title": "Barca de docinhos",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/barca_de_docinhos.jpg"
-    },
-    {
-      "id": "6a5a",
-      "title": "Barca de docinhos",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/barca_de_docinhos.jpg"
-    },
-    {
-      "id": "2ecf",
-      "title": "Bolo de pote",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/bolo_de_pote.jpg"
-    },
-    {
-      "id": "5c41",
-      "title": "Bolo de pote",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/bolo_de_pote.jpg"
-    },
-    {
-      "id": "2f17",
-      "title": "Bolo de pote",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/bolo_de_pote.jpg"
-    },
-    {
-      "id": "e7e0",
-      "title": "Bolo de pote",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/bolo_de_pote.jpg"
-    },
-    {
-      "id": "a6ea",
-      "title": "Bolo de pote",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/bolo_de_pote.jpg"
-    },
-    {
-      "id": "371f",
-      "title": "Bolo de pote",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/bolo_de_pote.jpg"
-    },
-    {
-      "id": "70df",
-      "title": "Bolo de pote",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/bolo_de_pote.jpg"
-    },
-    {
-      "id": "d396",
-      "title": "Bolo de pote",
-      "description": "Alface romana, croutons e molho Caesar caseiro.",
-      "price": "R$ 15,00",
-      "image": "/src/assets/bolo_de_pote.jpg"
-    },
-    {
-      "id": "43a3",
+      "id": 1717166072291,
       "title": "Bolo de pote",
       "description": "Alface romana, croutons e molho Caesar caseiro.",
       "price": "R$ 15,00",
