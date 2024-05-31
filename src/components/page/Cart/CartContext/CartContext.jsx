@@ -9,39 +9,41 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
-    const fetchCart = async () => {
-        try {
-            const response = await axios.get('http://localhost:5000/cart');
-            setCart(response.data);
-        } catch (error) {
-            console.error('Erro ao buscar o carrinho:', error);
-        }
-    };
-
     useEffect(() => {
+        const fetchCart = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/cart');
+                setCart(response.data);
+            } catch (error) {
+                console.error('Erro ao buscar o carrinho:', error);
+            }
+        };
         fetchCart();
     }, []);
 
     const addToCart = async (item) => {
         try {
             await axios.post('http://localhost:5000/cart', item);
-            fetchCart(); // Atualiza o carrinho após adicionar
+            setCart((prevCart) => [...prevCart, item]);
         } catch (error) {
             console.error('Erro ao adicionar ao carrinho:', error);
         }
     };
 
-    const removeFromCart = async (itemId) => {
+    const removeFromCart = async (title) => {
         try {
-            await axios.delete(`http://localhost:5000/cart/${itemId}`);
-            fetchCart(); // Atualiza o carrinho após remover
+            const itemToRemove = cart.find(item => item.title === title);
+            if (itemToRemove) {
+                await axios.delete(`http://localhost:5000/cart/${itemToRemove.id}`);
+                setCart((prevCart) => prevCart.filter(item => item.id !== itemToRemove.id));
+            }
         } catch (error) {
             console.error('Erro ao remover do carrinho:', error);
         }
     };
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, fetchCart }}>
+        <CartContext.Provider value={{ cart, setCart, addToCart, removeFromCart }}>
             {children}
         </CartContext.Provider>
     );

@@ -14,19 +14,19 @@ const Menu = () => {
             <section className={styles.menu_section} id="starters">
                 <h1>Bolos</h1>
                 <MenuItem 
-                    title="Com cobertura de chocolate"
+                    title="Bolo de pote"
                     description="Alface romana, croutons e molho Caesar caseiro."
                     price="R$ 15,00"
                     image={bolo1}
                 />
                 <MenuItem 
-                    title="Com cobertura de chocolate"
+                    title="Bolo com cobertura de leite ninho"
                     description="Alface romana, croutons e molho Caesar caseiro."
                     price="R$ 15,00"
                     image={bolo2}
                 />
                 <MenuItem 
-                    title="Com cobertura de chocolate"
+                    title="Brownie com Kitkat"
                     description="Alface romana, croutons e molho Caesar caseiro."
                     price="R$ 15,00"
                     image={bolo3}
@@ -36,20 +36,20 @@ const Menu = () => {
             <section className={styles.menu_section} id="main-courses">
                 <h1>Bolos de Pote</h1>
                 <MenuItem 
-                    title="Com cobertura de chocolate"
+                    title="Barca de docinhos"
                     description="Alface romana, croutons e molho Caesar caseiro."
                     price="R$ 15,00"
                     image={doc1}
                 />
             
                 <MenuItem 
-                    title="Com cobertura de chocolate"
+                    title="Docinho de coco"
                     description="Alface romana, croutons e molho Caesar caseiro."
                     price="R$ 15,00"
                     image={doc3}
                 />
                 <MenuItem 
-                    title="Com cobertura de chocolate"
+                    title="Brigadeiro de docinho de morango"
                     description="Alface romana, croutons e molho Caesar caseiro."
                     price="R$ 15,00"
                     image={doc4}

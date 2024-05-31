@@ -8,10 +8,13 @@
     margin-left: 150px;
     
 }
+.menu_container h1{
+    font-size: 2rem;
+}
 .menu_container h1, h2{
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .menu_container img{
