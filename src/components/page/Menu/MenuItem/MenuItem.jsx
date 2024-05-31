@@ -1,12 +1,14 @@
 import styles from './MenuItem.module.css';
 import { useCart } from '../../Cart/UseCart/useCart';
 
+
+
 const MenuItem = ({ id, title, description, price, image }) => {
-    const { addToCart } = useCart();
+    const { addToCart, setCart } = useCart();
 
     const handleAddToCart = () => {
         const item = { id, title, description, price, image };
-        addToCart(item);
+        addToCart(item, setCart);
     };
 
     return (

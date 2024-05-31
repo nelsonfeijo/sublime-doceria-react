@@ -79,7 +79,7 @@ const Cart = () => {
         const itemToAdd = cart.find(item => item.title === title);
         if (itemToAdd) {
             const newItem = { ...itemToAdd, id: generateUniqueId() }; // Usa a função para gerar um ID único
-            addToCart(newItem);
+            addToCart(newItem, setCart);
             const updatedCart = groupedCartItems.map(item =>
                 item.title === title ? { ...item, quantity: item.quantity + 1 } : item
             );
