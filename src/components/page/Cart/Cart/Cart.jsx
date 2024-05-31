@@ -3,7 +3,7 @@ import styles from '../Cart/Cart.module.css';
 import { useState, useEffect } from 'react';
 
 const Cart = () => {
-    const { cart, setCart, addToCart, removeFromCart, removeAllFromCart } = useCart();
+    const { cart, setCart, addToCart, removeFromCart, removeItemsByTitle } = useCart();
     const [groupedCartItems, setGroupedCartItems] = useState([]);
     const [total, setTotal] = useState(0);
 
@@ -55,23 +55,36 @@ const Cart = () => {
         removeFromCart(title); // Chama a função removeFromCart para atualizar o backend
     };
 
-    const handleRemoveAllFromCart = (title) => {
-        const updatedCart = groupedCartItems.filter(item => item.title !== title);
-        setGroupedCartItems(updatedCart);
 
-        const updatedOriginalCart = cart.filter(item => item.title !== title);
-        setCart(updatedOriginalCart);
 
-        // Remove todos os itens com o título fornecido do backend
-        removeAllFromCart(title);
+    const handleRemoveAllFromCart = async (title) => {
+    await removeItemsByTitle(title);
+    // Atualize o estado do grupo de itens após a remoção dos itens
+    const updatedGroupedCartItems = groupedCartItems.filter(item => item.title !== title);
+    setGroupedCartItems(updatedGroupedCartItems);
+};
+
+
+    const generateUniqueId = () => {
+        const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let result = '';
+        for (let i = 0; i < 4; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return result;
     };
-
+    
+    // No seu componente Cart
     const handleAddToCart = (title) => {
         const itemToAdd = cart.find(item => item.title === title);
         if (itemToAdd) {
-            const newItem = { ...itemToAdd, id: Date.now() }; // Cria um novo item com um ID único
+            const newItem = { ...itemToAdd, id: generateUniqueId() }; // Usa a função para gerar um ID único
             addToCart(newItem);
-        }
+            const updatedCart = groupedCartItems.map(item =>
+                item.title === title ? { ...item, quantity: item.quantity + 1 } : item
+            );
+            setGroupedCartItems(updatedCart);
+        }  
     };
 
     const handleCheckout = () => {
