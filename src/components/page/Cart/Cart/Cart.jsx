@@ -95,7 +95,7 @@ const Cart = () => {
 
         const addressInput = "O meu endereço é: "; 
         
-        const message = encodeURIComponent(`${cartItems} || Valor total: ${total.toFixed(2)} || ${addressInput}`);
+        const message = encodeURIComponent(`Olá, gostaria de fazer o seguinte pedido: ${cartItems} || Valor total: ${total.toFixed(2)} || ${addressInput}`);
         const phone = "48999341918";
         window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 
@@ -118,7 +118,7 @@ const Cart = () => {
                             <div key={item.title} className={styles.cart_item}>
                                 <img src={item.image} alt={item.title} />
                                 <div className={styles.cart_item_details}>
-                                    <div>
+                                    <div className={styles.description}>
                                         <h3>{item.title}</h3>
                                         <p>{item.description}</p>
                                         <p>{item.price}</p>

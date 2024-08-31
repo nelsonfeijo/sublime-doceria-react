@@ -1,3 +1,39 @@
 {
-  "cart": []
+  "cart": [
+    {
+      "id": "3304",
+      "title": "Bolo de pote",
+      "description": "Bolo de 4 leites, com chocolate branco realado e muito cremoso",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    },
+    {
+      "id": "b04a",
+      "title": "Bolo com cobertura de leite ninho",
+      "description": "Bolo simples com cobertura de leite ninho",
+      "price": "R$ 35,00",
+      "image": "/src/assets/bolo_de_leite_ninho.jpg"
+    },
+    {
+      "id": "cbf9",
+      "title": "Brownie com KitKat",
+      "description": "Brownie com cobertura de brigadeiro e KitKat",
+      "price": "R$ 10,00",
+      "image": "/src/assets/brownie.jpg"
+    },
+    {
+      "id": "11d2",
+      "title": "Barca de docinhos",
+      "description": "Barca com 20 docinhos sortidos.",
+      "price": "R$ 30,00",
+      "image": "/src/assets/barca_de_docinhos.jpg"
+    },
+    {
+      "id": "cePw",
+      "title": "Bolo de pote",
+      "description": "Bolo de 4 leites, com chocolate branco realado e muito cremoso",
+      "price": "R$ 15,00",
+      "image": "/src/assets/bolo_de_pote.jpg"
+    }
+  ]
 }
